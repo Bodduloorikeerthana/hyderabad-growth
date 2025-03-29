@@ -34,13 +34,13 @@ const BlogCard: React.FC<BlogCardProps> = ({
       </div>
       
       <div className="p-6">
-        <h3 className="text-2xl font-bold mb-2">{title}</h3>
+        <h3 className="text-2xl brand-color font-bold mb-2">{title}</h3>
         
         {stats && (
           <p className="text-gray-600 mb-4">{stats}</p>
         )}
         
-        <p className="text-gray-600 mb-4">{summary}</p>
+        <p className="text-600 text-black  mb-4">{summary}</p>
         
         <div className="flex justify-between items-center">
           <Link 

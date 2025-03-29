@@ -1,8 +1,8 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { blogPosts } from "../../../data/blogPosts";
-import Banner from "../../../components/Banner";
+import { blogPosts } from "../../../../types/blogPosts";
+import Banner from "../../../../components/Banner";
 import Link from "next/link";
 import Image from "next/image";
 

@@ -10,17 +10,8 @@ export interface BlogPost {
   
   export const blogPosts: BlogPost[] = [
     {
-      id: "8-views-turns-7",
-      title: "8 Views turns 7!",
-      summary: "Time seems to fly by as we celebrate our 7th anniversary at 8 Views.",
-      content: "Full content goes here...",
-      imageUrl: "/images/blog/team-photo.jpg",
-      date: "Jul 22, 2022",
-      stats: "7 years | 100+ team members | 200+ brands | 2 cities"
-    },
-    {
       id: "hyderabad-real-estate-growth",
-      title: "Hyderabad Real Estate Growth 2024",
+      title: "2025 Hyderabad Property Predictions: Boom or Bust? Insights from a Real Estate Expert",
       summary: "An analysis of the booming real estate market in Hyderabad's key areas.",
       content: "Full content goes here...",
       imageUrl: "/images/blog/hyderabad-skyline.jpg",
