@@ -5,6 +5,7 @@ import { blogPosts } from "../../../../types/blogPosts";
 import Banner from "../../../../components/Banner";
 import Link from "next/link";
 import Image from "next/image";
+import AudioPlayer from "../../../../components/AudioPlayer";
 
 export default function BlogPostPage() {
   const params = useParams();
@@ -33,24 +34,28 @@ export default function BlogPostPage() {
         ]}
       />
       
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="relative h-96 w-full mb-8">
+      <div className="container mx-auto py-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative h-[250px] sm:h-[600px] w-full mb-8">
             <Image
               src={post.imageUrl}
               alt={post.title}
               fill
-              style={{ objectFit: 'cover' }}
               className="rounded-lg"
             />
           </div>
           
-          <div className="prose max-w-none">
-            <p className="text-lg leading-relaxed">{post.content || post.summary}</p>
-            
-            {/* You can expand this section with more formatted content */}
-            {/* For a real blog, you might want to use a rich text editor or markdown */}
-          </div>
+          {/* Audio Player */}
+          {post.audioId && (
+            <AudioPlayer 
+              youtubeId={post.audioId} 
+            />
+          )}
+          
+          <div
+            className="prose max-w-none blog-content sm:mx-0 mx-4 text-black"
+            dangerouslySetInnerHTML={{ __html: post.content || post.summary }}
+          />
           
           <div className="mt-8 flex items-center text-gray-500">
             <svg className="w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -145,10 +145,59 @@ h2{
   .slick-next:before {
     font-size: 16px;
   }
+  .blog-content h2{
+    font-size: 25px !important;
+    line-height: 30px !important;
+  }
 }
 
+.blog-content h2{
+  line-height: 40px;
+  font-weight: 700;
+  font-size: 35px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  color: var(--brand-color);
+}
+.blog-card{
+  height: 500px;
+}
 
+.audio-player .progress-bar {
+  height: 8px;
+  border-radius: 4px;
+  background-color: #e2e8f0;
+  cursor: pointer;
+  overflow: hidden;
+}
 
+.audio-player .progress {
+  height: 100%;
+  background-color: var(--brand-color);
+  border-radius: 4px;
+  transition: width 0.1s linear;
+}
 
+.audio-player .controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+}
 
+.audio-player .play-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--brand-color);
+  color: white;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
 
+.audio-player .play-button:hover {
+  background-color: #3a4787;
+}
