@@ -30,7 +30,6 @@ export default function Homepage() {
   return (
     <div className="space-y-8">
       {/* Navbar and Banner */}
-      <Navbar />
       <Banner 
         title="Discover Hyderabad's Real Estate Potential"
         subtitle="Insights on growth areas, investment opportunities, and market trends"
