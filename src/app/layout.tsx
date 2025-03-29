@@ -3,7 +3,7 @@ import { Cinzel, Fauna_One } from "next/font/google";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 
 // Load Cinzel font
 const cinzel = Cinzel({
