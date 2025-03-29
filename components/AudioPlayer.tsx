@@ -227,31 +227,37 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ youtubeId, title }) => {
                             </button>
 
                             {/* Volume control */}
-                            {/* Volume slider that crosses the container boundary */}
                             <div className="relative">
                                 <button
                                     onClick={() => setShowVolumeSlider(!showVolumeSlider)}
-                                    className="text-gray-700 hover:text-blue-600 focus:outline-none"
+                                    className="text-gray-700 hover:text-[#29356B]"
+                                    aria-label="Volume"
                                 >
-                                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clipRule="evenodd" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        {volume > 0 && (
+                                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                        )}
+                                        {volume > 50 && (
+                                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                                        )}
                                     </svg>
                                 </button>
-
                                 {showVolumeSlider && (
-                                    <div className="absolute bottom-0 right-0 transform translate-y-[120%] bg-white p-2 rounded-md shadow-lg z-10" style={{ height: '150px' }}>
+                                    <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 h-32 bg-white p-2 rounded-md shadow-lg flex items-center justify-center">
                                         <input
                                             type="range"
                                             min="0"
                                             max="100"
                                             value={volume}
                                             onChange={handleVolumeChange}
+                                            className="h-full"
                                             style={{
                                                 writingMode: 'bt-lr',
                                                 WebkitAppearance: 'slider-vertical',
                                                 appearance: 'slider-vertical',
                                                 width: '8px',
-                                                height: '120px'
+                                                height: '100px'
                                             }}
                                         />
                                     </div>
@@ -263,7 +269,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ youtubeId, title }) => {
             </div>
 
             {/* Hidden YouTube player */}
-            <div style={{ height: 0, width: 0, overflow: 'hidden' }}>
+            <div style={{ height: 0, width: 0 }}>
                 <div id={`youtube-player-${videoId}`}></div>
             </div>
         </div>
