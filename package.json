@@ -18,7 +18,8 @@
     "react-dom": "^19.0.0",
     "react-slick": "^0.30.3",
     "recharts": "^2.15.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "yet-another-react-lightbox": "^3.21.8"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

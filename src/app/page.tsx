@@ -60,10 +60,16 @@ export default function Homepage() {
         <h2 className="brand-color font-bold mb-4 text-center">
           Hyderabad Layout
         </h2>
-        
+
+        <Image
+          src="/real-estate.jpeg"
+          width={500}
+          className="block mx-auto"
+          height={500} alt={""}        />
+     
       </div>
 
-      <div className="container sm:mx-auto  py-12">
+      <div className="container sm:mx-auto recent-posts py-5">
         <PostsDisplay 
           mode="grid"
           title="Latest From Our Blog"

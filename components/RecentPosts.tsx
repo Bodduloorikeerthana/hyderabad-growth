@@ -87,13 +87,13 @@ const PostsDisplay: React.FC<PostsDisplayProps> = ({
       key={post.id}
       className="group"
     >
-      <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
-        <div className="relative h-48 w-full overflow-hidden">
+      <div className="bg-white rounded-lg blog-card overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div className="relative h-50 w-full overflow-hidden">
           <Image
             src={post.imageUrl}
             alt={post.title}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            className="group-hover:scale-105 transition-transform duration-300"
           />
         </div>
         <div className="p-4">
@@ -137,7 +137,7 @@ const PostsDisplay: React.FC<PostsDisplayProps> = ({
   const renderCarouselItem = (post: any) => (
     <div key={post.id} className="px-2">
       <Link href={`/blog/${post.id}`} className="group block">
-        <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div className="bg-white rounded-lg blog-card overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
           <div className="relative h-48 w-full overflow-hidden">
             <Image
               src={post.imageUrl}

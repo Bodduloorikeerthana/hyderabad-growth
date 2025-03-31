@@ -23,7 +23,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
 }) => {
   return (
     <Link href={`/blog/${id}`}>
-      <div className="bg-white rounded-lg overflow-hidden blog-card shadow-md hover:shadow-lg transition-shadow duration-300">
+      <div className="bg-white rounded-lg overflow-hidden  shadow-md hover:shadow-lg transition-shadow duration-300">
         <div className="relative h-60 w-full">
           <Image
             src={imageUrl}
