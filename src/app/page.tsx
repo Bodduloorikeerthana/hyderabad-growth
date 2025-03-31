@@ -15,9 +15,7 @@ import HyderabadLandPrices from "../../components/charts";
 export default function Homepage() {
 
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const handleButtonClick = () => {
-    console.log('Button clicked');
-  };
+ 
 
   // YouTube video slider - multiple iframes
   const videoTourSlides: SlideItem[] = [
@@ -105,22 +103,20 @@ export default function Homepage() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-10">
           <Card
-            image="https://via.placeholder.com/400"
-            title="Luxury Apartment in Hyderabad"
+            image="jp-morgan.jpeg"
+            title="Gachibowli"
             description="Explore the best luxury apartments in the heart of Hyderabad with modern amenities."
-            buttonText="Learn More"
-            onButtonClick={handleButtonClick}
+           
           />
           <Card
-            image="https://via.placeholder.com/400"
-            title="Affordable Housing in Gachibowli"
-            description="Check out affordable housing options in the fast-growing area of Gachibowli."
-            buttonText="Discover"
-            onButtonClick={handleButtonClick}
+            image="Kokapet.jpeg"
+            title="Kokapet"
+            description="Check out affordable housing options in the fast-growing area of Kokapet"
+           
           />
           <Card
-            image="https://via.placeholder.com/400"
-            title="Premium Villas in Kokapet"
+            image="broadcom.jpeg"
+            title="Finacial District"
             description="Invest in luxurious villas in one of the most sought-after locations in Hyderabad."
           />
         </div>

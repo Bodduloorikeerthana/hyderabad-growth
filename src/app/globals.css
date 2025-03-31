@@ -122,8 +122,16 @@ h2{
   max-width: 100%;
 }
 
+h3{
+  font-size: 25px !important;
+  line-height: 30px !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  h3{
+    font-size: 25px !important;
+  }
   .recharts-text{
     font-size: 12px !important;
   }

@@ -12,8 +12,8 @@ const Card: React.FC<CardProps> = ({ image, title, description, buttonText, onBu
   return (
     <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white transform transition-all hover:scale-105 hover:shadow-2xl">
       <img className="w-full h-48 object-cover" src={image} alt={title} />
-      <div className="p-6">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">{title}</h2>
+      <div className="sm:p-4 p-3">
+        <h3 className="brand-color font-bold mb-3">{title}</h3>
         <p className="text-gray-600 text-sm mb-6">{description}</p>
         {buttonText && (
           <button
