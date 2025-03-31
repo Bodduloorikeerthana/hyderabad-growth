@@ -1,84 +1,91 @@
 "use client";
 
-import Banner from "../../components/Banner";
+import { useState } from "react";
 import Image from "next/image";
-import Navbar from "../../components/Navbar";
-import AdvancedSlider from "../../components/Slide";
-import { blogPosts } from "../../types/blogPosts";
-import { SlideItem } from "../../types/SliderTypes";
-import PostsDisplay from "../../components/RecentPosts";
-export default function Homepage() {
-  
-  // YouTube video slider - multiple iframes
-  const videoTourSlides: SlideItem[] = [
-    {
-      type: 'iframe',
-      src: 'https://www.youtube.com/embed/wzZUOiWYyB0',
-      alt: 'Luxury Villa Virtual Tour'
-    },
-    {
-      type: 'iframe',
-      src: 'https://www.youtube.com/embed/SQPGpfRQ4Q4',
-      alt: 'Apartment Walkthrough'
-    },
-    {
-      type: 'iframe',
-      src: 'https://www.youtube.com/embed/fmKRgpq-cLo',
-      alt: 'Commercial Property Tour'
-    }
-  ];
+import Lightbox from "yet-another-react-lightbox";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 
+const PropertyGallery = ({ images }) => {
+  const [open, setOpen] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
 
+  // Transform the images array into the format needed by the lightbox
+  const slides = images.map(image => ({
+    src: image.url,
+    alt: image.alt || "Property image",
+    width: image.width || 1200,
+    height: image.height || 800,
+  }));
 
   return (
-    <div className="space-y-8">
-      {/* Navbar and Banner */}
-      <Banner 
-        title="Discover Hyderabad's Real Estate Potential"
-        subtitle="Insights on growth areas, investment opportunities, and market trends"
-        buttons={[
-          { label: "Trending Areas", href: "/areas", primary: true },
-          { label: "Watch Videos", href: "/videos", primary: false }
-        ]}
-      />
-   
-      
-      {/* Video Tours Slider - iframes only */}
-      <div className="container mx-auto py-5">
-        <h2 className="brand-color text-center sm:text-3xl font-bold mb-4">Featured Videos</h2>
-        <p className="mb-[50px] text-gray-700 text-center">Explore our channel through our videos</p>
-        <AdvancedSlider 
-          slides={videoTourSlides}
-          showDots={true}
-          showArrows={true}
-          autoplay={false}
-          className="video-tours-slider"
-        />
-      </div>
-
-      <div className="container mx-auto py-5">
-        <h2 className="brand-color font-bold mb-4 text-center">
-          Hyderabad Layout
-        </h2>
-
+    <div>
+      {/* Featured image (first image) */}
+      <div 
+        className="relative h-[250px] sm:h-[600px] w-full mb-4 cursor-pointer"
+        onClick={() => {
+          setPhotoIndex(0);
+          setOpen(true);
+        }}
+      >
         <Image
-          src="/real-estate.jpeg"
-          width={500}
-          className="block mx-auto"
-          height={500} alt={""}        />
-     
-      </div>
-
-      <div className="container sm:mx-auto recent-posts py-5">
-        <PostsDisplay 
-          mode="grid"
-          title="Latest From Our Blog"
-          count={6}
-          className="sm:mx-auto mx-3"
-          showViewAll={true}
+          src={images[0].url}
+          alt={images[0].alt || "Property main image"}
+          fill
+          className="rounded-lg object-cover"
         />
+        <div className="absolute bottom-4 right-4 bg-white bg-opacity-80 px-3 py-1 rounded-full text-sm">
+          View all {images.length} photos
+        </div>
       </div>
 
+      {/* Thumbnail gallery */}
+      <div className="grid grid-cols-4 gap-2 mb-8">
+        {images.slice(1, 5).map((image, index) => (
+          <div 
+            key={index}
+            className="relative aspect-video cursor-pointer"
+            onClick={() => {
+              setPhotoIndex(index + 1);
+              setOpen(true);
+            }}
+          >
+            <Image
+              src={image.url}
+              alt={image.alt || `Property image ${index + 2}`}
+              fill
+              className="rounded-lg object-cover"
+            />
+            {index === 3 && images.length > 5 && (
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
+                <span className="text-white font-semibold">+{images.length - 5} more</span>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Lightbox */}
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        slides={slides}
+        index={photoIndex}
+        plugins={[Thumbnails, Zoom]}
+        thumbnails={{
+          position: "bottom",
+          width: 120,
+          height: 80,
+        }}
+        zoom={{
+          maxZoomPixelRatio: 3,
+          zoomInMultiplier: 2,
+        }}
+      />
     </div>
   );
-}
+};
+
+export default PropertyGallery;
