@@ -10,6 +10,7 @@ import { SlideItem } from "../../types/SliderTypes";
 import PostsDisplay from "../../components/RecentPosts";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import HyderabadLandPrices from "../../components/charts";
 export default function Homepage() {
 
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -89,7 +90,7 @@ export default function Homepage() {
 
       <div className="container sm:mx-auto mx-3 py-5">
         <h2 className="brand-color text-center">
-          
+
         </h2>
       </div>
 
