@@ -4,8 +4,11 @@ import Banner from "../../components/Banner";
 import Image from "next/image";
 import Navbar from "../../components/Navbar";
 import AdvancedSlider from "../../components/Slide";
+import { blogPosts } from "../../types/blogPosts";
 import { SlideItem } from "../../types/SliderTypes";
+import PostsDisplay from "../../components/RecentPosts";
 export default function Homepage() {
+  
   // YouTube video slider - multiple iframes
   const videoTourSlides: SlideItem[] = [
     {
@@ -58,6 +61,16 @@ export default function Homepage() {
           Hyderabad Layout
         </h2>
         
+      </div>
+
+      <div className="container sm:mx-auto  py-12">
+        <PostsDisplay 
+          mode="grid"
+          title="Latest From Our Blog"
+          count={6}
+          className="sm:mx-auto mx-3"
+          showViewAll={true}
+        />
       </div>
 
     </div>
