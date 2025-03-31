@@ -87,6 +87,12 @@ export default function Homepage() {
         />
       </div>
 
+      <div className="container sm:mx-auto mx-3 py-5">
+        <h2 className="brand-color text-center">
+          
+        </h2>
+      </div>
+
       <div className="container sm:mx-auto recent-posts py-5">
         <PostsDisplay 
           mode="grid"
