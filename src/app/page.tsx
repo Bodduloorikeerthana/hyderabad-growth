@@ -89,7 +89,7 @@ export default function Homepage() {
       </div>
 
       <div className="container sm:mx-auto mx-3 py-5">
-        <h2 className="brand-color text-center">
+        <h2 className="brand-color pb-5 text-center">
           Hyderabad Land Prices
         </h2>
         <HyderabadLandPrices></HyderabadLandPrices>

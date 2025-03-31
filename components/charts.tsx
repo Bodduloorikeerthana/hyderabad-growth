@@ -22,28 +22,26 @@ const data = [
 
 export default function HyderabadLandPrices() {
   return (
-    <div className="flex flex-col items-center bg-gradient-to-b from-blue-100 to-white p-10 rounded-3xl shadow-2xl w-full max-w-5xl mx-auto">
-      <p className="text-gray-600 text-lg mb-5 font-medium">
-        Average Price per Square Foot (₹)
-      </p>
-      <p className="text-gray-600 text-lg mb-8 font-medium">
-        Top Area in Hyderabad (2023-2025)
-      </p>
-      <div className="w-full bg-white p-6 rounded-2xl shadow-lg">
-        <ResponsiveContainer width="100%" height={400}>
+    <div className="flex flex-col items-center">
+      <div className="w-full bg-white p-4 rounded-2xl shadow-2xl">
+        <p className="text-center text-black text-lg mb-4 font-bold">
+          Average Price per Square Foot (₹)
+        </p>
+        <ResponsiveContainer width="100%" height={300}>
           <BarChart
             data={data}
-            margin={{ top: 20, right: 30, left: 20, bottom: 50 }}
+            margin={{ top: 20, right: 20, left: 10, bottom: 40 }}
           >
             <CartesianGrid strokeDasharray="3 3" opacity={0.4} />
             <XAxis
               dataKey="name"
-              tick={{ fill: "#1E3A8A", fontSize: 16, fontWeight: "bold" }}
-              angle={-15}
+              tick={{ fill: "#1E3A8A", fontSize: 12, fontWeight: "bold" }}
+              angle={-10}
               textAnchor="end"
+              interval={0} // Ensures every label is displayed
             />
             <YAxis
-              tick={{ fill: "#1E3A8A", fontSize: 16, fontWeight: "bold" }}
+              tick={{ fill: "#1E3A8A", fontSize: 12, fontWeight: "bold" }}
             />
             <Tooltip
               contentStyle={{
@@ -58,7 +56,7 @@ export default function HyderabadLandPrices() {
               align="center"
               height={40}
               wrapperStyle={{
-                fontSize: "16px",
+                fontSize: "14px",
                 fontWeight: "bold",
                 color: "#1E3A8A",
               }}
@@ -66,13 +64,13 @@ export default function HyderabadLandPrices() {
             <Bar
               dataKey="price"
               fill="#1D4ED8"
-              barSize={55}
+              barSize={40} // Reduced bar size for mobile
               radius={[12, 12, 0, 0]}
               label={{
                 position: "top",
                 fill: "#1E3A8A",
                 fontWeight: "bold",
-                fontSize: 16,
+                fontSize: 12, // Smaller font for labels
               }}
             />
           </BarChart>
