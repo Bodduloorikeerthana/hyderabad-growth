@@ -2,6 +2,7 @@
 
 import Banner from "../../components/Banner";
 import Image from "next/image";
+import Card from "../../components/Card";
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import AdvancedSlider from "../../components/Slide";
@@ -14,7 +15,10 @@ import HyderabadLandPrices from "../../components/charts";
 export default function Homepage() {
 
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  
+  const handleButtonClick = () => {
+    console.log('Button clicked');
+  };
+
   // YouTube video slider - multiple iframes
   const videoTourSlides: SlideItem[] = [
     {
@@ -39,7 +43,7 @@ export default function Homepage() {
   return (
     <div className="space-y-8">
       {/* Navbar and Banner */}
-      <Banner 
+      <Banner
         title="Discover Hyderabad's Real Estate Potential"
         subtitle="Insights on growth areas, investment opportunities, and market trends"
         buttons={[
@@ -47,13 +51,13 @@ export default function Homepage() {
           { label: "Watch Videos", href: "/videos", primary: false }
         ]}
       />
-   
-      
+
+
       {/* Video Tours Slider - iframes only */}
       <div className="container mx-auto py-5">
         <h2 className="brand-color text-center sm:text-3xl font-bold mb-4">Featured Videos</h2>
         <p className="mb-[50px] text-gray-700 text-center">Explore our channel through our videos</p>
-        <AdvancedSlider 
+        <AdvancedSlider
           slides={videoTourSlides}
           showDots={true}
           showArrows={true}
@@ -61,13 +65,13 @@ export default function Homepage() {
           className="video-tours-slider"
         />
       </div>
-  <div className="container mx-auto py-5">
+      <div className="container mx-auto py-5">
         <h2 className="brand-color font-bold mb-4 text-center">
           Hyderabad Layout
         </h2>
 
         {/* Clickable image with cursor pointer */}
-        <div 
+        <div
           className="cursor-pointer relative w-fit mx-auto"
           onClick={() => setIsLightboxOpen(true)}
         >
@@ -79,7 +83,7 @@ export default function Homepage() {
             alt="Hyderabad City Layout Map"
           />
         </div>
-        
+
         {/* Lightbox component */}
         <Lightbox
           open={isLightboxOpen}
@@ -99,10 +103,32 @@ export default function Homepage() {
         <h2 className="text-center brand-color pb-5">
           Trending Areas in Hyderabad
         </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-10">
+          <Card
+            image="https://via.placeholder.com/400"
+            title="Luxury Apartment in Hyderabad"
+            description="Explore the best luxury apartments in the heart of Hyderabad with modern amenities."
+            buttonText="Learn More"
+            onButtonClick={handleButtonClick}
+          />
+          <Card
+            image="https://via.placeholder.com/400"
+            title="Affordable Housing in Gachibowli"
+            description="Check out affordable housing options in the fast-growing area of Gachibowli."
+            buttonText="Discover"
+            onButtonClick={handleButtonClick}
+          />
+          <Card
+            image="https://via.placeholder.com/400"
+            title="Premium Villas in Kokapet"
+            description="Invest in luxurious villas in one of the most sought-after locations in Hyderabad."
+          />
+        </div>
+
       </div>
 
       <div className="container sm:mx-auto recent-posts py-5">
-        <PostsDisplay 
+        <PostsDisplay
           mode="grid"
           title="Latest From Our Blog"
           count={6}
