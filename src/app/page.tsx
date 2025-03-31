@@ -95,6 +95,12 @@ export default function Homepage() {
         <HyderabadLandPrices></HyderabadLandPrices>
       </div>
 
+      <div className="container sm mx-auto mx-3 py-5">
+        <h2 className="text-center brand-color pb-5">
+          Trending Areas in Hyderabad
+        </h2>
+      </div>
+
       <div className="container sm:mx-auto recent-posts py-5">
         <PostsDisplay 
           mode="grid"

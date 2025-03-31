@@ -124,6 +124,9 @@ h2{
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .recharts-text{
+    font-size: 12px !important;
+  }
   h2{
     font-size: 30px !important;
   }
@@ -204,3 +207,5 @@ h2{
 .recent-posts .blog-card{
   height: 360px;
 }
+
+
