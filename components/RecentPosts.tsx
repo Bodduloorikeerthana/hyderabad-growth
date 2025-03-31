@@ -189,7 +189,7 @@ const PostsDisplay: React.FC<PostsDisplayProps> = ({
   
   return (
     <div className={className}>
-      {title && <h2 className="text-2xl font-bold mb-6 text-[#29356B]">{title}</h2>}
+      {title && <h2 className="text-center brand-color font-bold mb-6">{title}</h2>}
       
       {renderContainer()}
       

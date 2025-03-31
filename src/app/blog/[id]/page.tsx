@@ -54,7 +54,7 @@ export default function BlogPostPage() {
                 youtubeId={post.audioId}
               />
             )}
-            
+          
             <div
               className="prose max-w-none blog-content sm:mx-0 mx-4 text-black"
               dangerouslySetInnerHTML={{ __html: post.content || post.summary }}

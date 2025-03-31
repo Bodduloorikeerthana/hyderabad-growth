@@ -75,7 +75,7 @@ export default function Homepage() {
         >
           <Image
             src="/real-estate.jpeg"
-            width={800}
+            width={500}
             height={500}
             className="block mx-auto hover:opacity-90 transition-opacity"
             alt="Hyderabad City Layout Map"
