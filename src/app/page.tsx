@@ -92,7 +92,7 @@ export default function Homepage() {
           mode="grid"
           title="Latest From Our Blog"
           count={6}
-          className="sm:mx-auto mx-3"
+          className="sm:mx-auto  mx-3"
           showViewAll={true}
         />
       </div>
