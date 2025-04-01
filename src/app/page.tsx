@@ -13,11 +13,10 @@ import PostsDisplay from "../../components/RecentPosts";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import HyderabadLandPrices from "../../components/charts";
-export default function Homepage() {
 
+export default function Homepage() {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
  
-
   // YouTube video slider - multiple iframes
   const videoTourSlides: SlideItem[] = [
     {
@@ -37,8 +36,6 @@ export default function Homepage() {
     }
   ];
 
-
-
   return (
     <div className="space-y-8">
       {/* Navbar and Banner */}
@@ -51,32 +48,29 @@ export default function Homepage() {
         ]}
       />
 
-
-<div className="container sm:mx-auto mx-3 py-5">
+      {/* Hyderabad Land Prices */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-5">
         <h2 className="brand-color pb-5 text-center">
           Hyderabad Land Prices
         </h2>
-        <HyderabadLandPrices></HyderabadLandPrices>
+        <HyderabadLandPrices />
       </div>
 
-
-
-      <div className="container sm mx-auto mx-3 py-5">
+      {/* Trending Areas in Hyderabad */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-5">
         <h2 className="text-center brand-color pb-5">
           Trending Areas in Hyderabad
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 sm:px-6 lg:px-8">
           <Card
             image="jp-morgan.jpeg"
             title="Gachibowli"
             description="Explore the best luxury apartments in the heart of Hyderabad with modern amenities."
-           
           />
           <Card
             image="Kokapet.jpeg"
             title="Kokapet"
             description="Check out affordable housing options in the fast-growing area of Kokapet"
-           
           />
           <Card
             image="broadcom.jpeg"
@@ -84,67 +78,46 @@ export default function Homepage() {
             description="Invest in luxurious villas in one of the most sought-after locations in Hyderabad."
           />
         </div>
-
       </div>
 
       {/* Video Tours Slider - iframes only */}
-      <div className="container mx-auto py-5">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-5">
         <h2 className="brand-color text-center sm:text-3xl font-bold mb-4">Featured Videos</h2>
-        <p className="mb-[50px] text-gray-700 text-center">Explore our channel through our videos</p>
-        <AdvancedSlider
-          slides={videoTourSlides}
-          showDots={true}
-          showArrows={true}
-          autoplay={false}
-          className="video-tours-slider"
-        />
-      </div>
-      {/* <div className="container mx-auto py-5">
-        <h2 className="brand-color font-bold mb-4 text-center">
-          Hyderabad Layout
-        </h2>
-        <div
-          className="cursor-pointer relative w-fit mx-auto"
-          onClick={() => setIsLightboxOpen(true)}
-        >
-          <Image
-            src="/real-estate.jpeg"
-            width={500}
-            height={500}
-            className="block mx-auto hover:opacity-90 transition-opacity"
-            alt="Hyderabad City Layout Map"
+        <p className="mb-12 text-gray-700 text-center">Explore our channel through our videos</p>
+        <div className="px-4 sm:px-6 lg:px-8">
+          <AdvancedSlider
+            slides={videoTourSlides}
+            showDots={true}
+            showArrows={true}
+            autoplay={false}
+            className="video-tours-slider"
           />
         </div>
-        <Lightbox
-          open={isLightboxOpen}
-          close={() => setIsLightboxOpen(false)}
-          slides={[{ src: "/real-estate.jpeg" }]}
-        />
-      </div> */}
+      </div>
 
- 
-
-      <div className="container mx-auto py-5">
+      {/* Podcast Section */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-5">
         <h2 className="text-center brand-color font-bold pb-5">
           Listen to our Podcast
         </h2>
-
-        <SpotifyPodcastCard 
-  podcastTitle="Hyderabad Growth Podcast"
-  podcastDescription="Real estate market insights and super interviews"
-  latestEpisode="Investment Opportunities in Kolkata"
-  spotifyUrl="https://open.spotify.com/show/0ENQicPBx6ERSomLraE87U?si=79db8a058d984a92"
-  spotifyImageUrl="spotify.jpeg"
-/>
-        
+        <div className="px-4 sm:px-6 lg:px-8">
+          <SpotifyPodcastCard 
+            podcastTitle="Hyderabad Growth Podcast"
+            podcastDescription="Real estate market insights and super interviews"
+            latestEpisode="Investment Opportunities in Kolkata"
+            spotifyUrl="https://open.spotify.com/show/0ENQicPBx6ERSomLraE87U?si=79db8a058d984a92"
+            spotifyImageUrl="spotify.jpeg"
+          />
+        </div>
       </div>
 
-      <div className="container sm:mx-auto recent-posts py-5">
+      {/* Recent Blog Posts */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-5">
         <PostsDisplay
           mode="grid"
           title="Latest From Our Blog"
           count={6}
-          className="sm:mx-auto  mx-3"
+          className="px-4 sm:px-6 lg:px-8"
           showViewAll={true}
         />
       </div>

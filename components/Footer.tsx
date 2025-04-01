@@ -3,16 +3,16 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="bg-[#29356b] text-white py-6">
-      <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+      <div className="container mx-auto  flex flex-col md:flex-row justify-between items-center">
         {/* Left Section */}
         <div className="text-center md:text-left mb-4 md:mb-0">
-          <h3 className="text-lg font-bold">Hyderabad Growth</h3>
+          <h3 className="text-lg py-3 font-bold">Hyderabad Growth</h3>
           <p className="text-sm text-gray-300">Real Estate Market Insights</p>
         </div>
 
         {/* Center Section - Quick Links */}
-        <div className="text-center md:text-left">
-          <h4 className="font-bold">Quick Links</h4>
+        <div className="text-center md:text-center">
+          <h4 className="font-bold py-3">Quick Links</h4>
           <nav className="text-sm text-gray-300">
             <a href="#" className="hover:text-gray-100 mx-1">
               Home

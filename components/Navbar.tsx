@@ -18,8 +18,8 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky m-0 top-0 z-50 bg-white  shadow-sm">
-      <nav className="mx-auto flex max-w-8xl items-center  justify-between p-4 lg:px-8" aria-label="Global">
+    <header className="sticky m-0 top-0 z-50 bg-white shadow-sm">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-4" aria-label="Global">
         <div className="flex">
           <Link href="/" className="brand-color font-bold">
             Hyderabad Growth
@@ -37,8 +37,8 @@ export default function Navbar() {
           </button>
         </div>
         
-        {/* This is the key part - the navigation items are now in a div that's aligned to the right */}
-        <div className="hidden lg:flex lg:items-center  lg:space-x-8">
+        {/* Navigation items with reduced spacing */}
+        <div className="hidden lg:flex lg:items-center lg:space-x-5">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -49,10 +49,10 @@ export default function Navbar() {
             </Link>
           ))}
           
-          {/* Optional: Contact button */}
+          {/* Contact button with reduced margin */}
           <Link
             href="/contact"
-            className="ml-4 bg-[#29356B] contact px-4 py-2 rounded-full font-medium hover:bg-gray-100 transition duration-200"
+            className="ml-2 bg-[#29356B] contact px-4 py-2 rounded-full font-medium hover:bg-gray-100 transition duration-200"
           >
             Contact
           </Link>
@@ -67,7 +67,6 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="font-bold text-[#29356B]">Hyderabad Growth</span>
-              
             </Link>
             <button
               type="button"
@@ -86,7 +85,7 @@ export default function Navbar() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base  font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -107,4 +106,4 @@ export default function Navbar() {
       </div>
     </header>
   );
-} 
+}
