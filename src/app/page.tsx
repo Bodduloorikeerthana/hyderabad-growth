@@ -3,6 +3,7 @@
 import Banner from "../../components/Banner";
 import Image from "next/image";
 import Card from "../../components/Card";
+import SpotifyPodcastCard from "../../components/Spotify";
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import AdvancedSlider from "../../components/Slide";
@@ -51,51 +52,14 @@ export default function Homepage() {
       />
 
 
-      {/* Video Tours Slider - iframes only */}
-      <div className="container mx-auto py-5">
-        <h2 className="brand-color text-center sm:text-3xl font-bold mb-4">Featured Videos</h2>
-        <p className="mb-[50px] text-gray-700 text-center">Explore our channel through our videos</p>
-        <AdvancedSlider
-          slides={videoTourSlides}
-          showDots={true}
-          showArrows={true}
-          autoplay={false}
-          className="video-tours-slider"
-        />
-      </div>
-      <div className="container mx-auto py-5">
-        <h2 className="brand-color font-bold mb-4 text-center">
-          Hyderabad Layout
-        </h2>
-
-        {/* Clickable image with cursor pointer */}
-        <div
-          className="cursor-pointer relative w-fit mx-auto"
-          onClick={() => setIsLightboxOpen(true)}
-        >
-          <Image
-            src="/real-estate.jpeg"
-            width={500}
-            height={500}
-            className="block mx-auto hover:opacity-90 transition-opacity"
-            alt="Hyderabad City Layout Map"
-          />
-        </div>
-
-        {/* Lightbox component */}
-        <Lightbox
-          open={isLightboxOpen}
-          close={() => setIsLightboxOpen(false)}
-          slides={[{ src: "/real-estate.jpeg" }]}
-        />
-      </div>
-
-      <div className="container sm:mx-auto mx-3 py-5">
+<div className="container sm:mx-auto mx-3 py-5">
         <h2 className="brand-color pb-5 text-center">
           Hyderabad Land Prices
         </h2>
         <HyderabadLandPrices></HyderabadLandPrices>
       </div>
+
+
 
       <div className="container sm mx-auto mx-3 py-5">
         <h2 className="text-center brand-color pb-5">
@@ -121,6 +85,58 @@ export default function Homepage() {
           />
         </div>
 
+      </div>
+
+      {/* Video Tours Slider - iframes only */}
+      <div className="container mx-auto py-5">
+        <h2 className="brand-color text-center sm:text-3xl font-bold mb-4">Featured Videos</h2>
+        <p className="mb-[50px] text-gray-700 text-center">Explore our channel through our videos</p>
+        <AdvancedSlider
+          slides={videoTourSlides}
+          showDots={true}
+          showArrows={true}
+          autoplay={false}
+          className="video-tours-slider"
+        />
+      </div>
+      {/* <div className="container mx-auto py-5">
+        <h2 className="brand-color font-bold mb-4 text-center">
+          Hyderabad Layout
+        </h2>
+        <div
+          className="cursor-pointer relative w-fit mx-auto"
+          onClick={() => setIsLightboxOpen(true)}
+        >
+          <Image
+            src="/real-estate.jpeg"
+            width={500}
+            height={500}
+            className="block mx-auto hover:opacity-90 transition-opacity"
+            alt="Hyderabad City Layout Map"
+          />
+        </div>
+        <Lightbox
+          open={isLightboxOpen}
+          close={() => setIsLightboxOpen(false)}
+          slides={[{ src: "/real-estate.jpeg" }]}
+        />
+      </div> */}
+
+ 
+
+      <div className="container mx-auto py-5">
+        <h2 className="text-center brand-color font-bold pb-5">
+          Listen to our Podcast
+        </h2>
+
+        <SpotifyPodcastCard 
+  podcastTitle="Hyderabad Growth Podcast"
+  podcastDescription="Real estate market insights and super interviews"
+  latestEpisode="Investment Opportunities in Kolkata"
+  spotifyUrl="https://open.spotify.com/show/0ENQicPBx6ERSomLraE87U?si=79db8a058d984a92"
+  spotifyImageUrl="spotify.jpeg"
+/>
+        
       </div>
 
       <div className="container sm:mx-auto recent-posts py-5">
