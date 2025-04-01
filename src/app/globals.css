@@ -170,9 +170,7 @@ h3{
   margin-top: 30px;
   color: var(--brand-color);
 }
-.blog-card{
-  height: 500px;
-}
+
 
 .audio-player .progress-bar {
   height: 8px;
