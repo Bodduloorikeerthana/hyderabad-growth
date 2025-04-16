@@ -10,7 +10,7 @@ const Footer = () => {
           <p className="text-sm text-gray-300">Real Estate Market Insights</p>
         </div>
 
-        {/* Center Section - Quick Links */}
+        {/* Center Section -  Links */}
         <div className="text-center md:text-center">
           <h4 className="font-bold py-3">Quick Links</h4>
           <nav className="text-sm text-gray-300">
